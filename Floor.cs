@@ -8,31 +8,24 @@ namespace HotelApplication
 {
     public class Floor
     {
-        //private int i;
-        //private int numRoomsPerFloor;
 
         public int FloorNumber { get; set; }
         public List<Room> Rooms { get; set; }
 
-        public Floor(int floorNumber, int[] numRooms)
+        public Floor(int floorNumber, int numRooms, int numSubRooms)
         {
             FloorNumber = floorNumber;
             Rooms = new List<Room>();
-            for(int i = 1; i <= numRooms.Length; i++)
+            for(int i = 1; i <= numRooms; i++)
             {
-                Rooms.Add(new Room(i));
+                Rooms.Add(new Room(i, numSubRooms));
             }
         }
 
-        //public Floor(int i, int numRoomsPerFloor)
-        //{
-        //    this.i = i;
-        //    this.numRoomsPerFloor = numRoomsPerFloor;
-        //}
 
         public override string ToString()
         {
-            return $"Floor {FloorNumber} has {Rooms.Count} rooms";
+            return $"Floor {FloorNumber} has {Rooms.Count} rooms, each with {Rooms[0].subRooms.Count} sub-rooms.";
         }
     }
 }

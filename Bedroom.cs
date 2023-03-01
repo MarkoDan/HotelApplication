@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace HotelApplication
 {
-    internal class Bedroom
+    public class Bedroom
     {
+        public string SubRoomType { get; set; }
+
+        public Bedroom()
+        {
+            SubRoomType = "Bedroom";
+        }
+        public override string ToString()
+        {
+            return "I am Bedroom";
+        }
     }
 }

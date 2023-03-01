@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace HotelApplication
 {
-    internal class Kitchen
+    public class Kitchen
     {
+        public string SubRoomType { get; set; }
+
+        public Kitchen()
+        {
+            SubRoomType = "Kitchen";
+        }
+
+        public override string ToString()
+        {
+            return $"I am {SubRoomType}";
+        }
+
+
     }
 }
